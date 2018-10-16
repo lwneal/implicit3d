@@ -195,7 +195,7 @@ def main():
         ts.print_every(2)
 
     # Now examine the representation that the network has learned
-    EVAL_FRAMES = 240
+    EVAL_FRAMES = 360
     z = torch.Tensor((1, latent_size)).cuda()
     ts_eval = TimeSeries('Evaluation', EVAL_FRAMES)
     vid_eval = imutil.VideoLoop('latent_space_traversal')
