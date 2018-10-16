@@ -3,6 +3,15 @@
 An implementation of the proof-of-concept experiment from
 *Implicit 3D Orientation Learning for 6D Object Detection from RGB Images* by Martin Sundermeyer et al. ECCV 2018.
 
+## Install and Run
+
+```bash
+git clone https://github.com/lwneal/implicit3d
+cd implicit3d
+pip install -r requirements.txt
+python denoising_autoencoder.py
+```
+
 Position and scale are treated as noise factors, and the autoencoder learns to be invariant to them, learning only the desired factor (rotation).
 
 ## Learned Representation
