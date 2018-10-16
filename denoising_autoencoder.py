@@ -19,21 +19,19 @@ prev_states = None
 class BoxEnv():
     def __init__(self):
         # The "true" latent space is four values: x, y, height, width
-        self.x = np.random.randint(10, 30)
-        self.y = np.random.randint(10, 30)
-        self.radius = np.random.randint(2, 6)
-        self.rotation = np.random.randint(0, np.pi)
+        self.x = np.random.randint(15, 25)
+        self.y = np.random.randint(15, 25)
+        self.radius = np.random.randint(5, 8)
+        self.rotation = np.random.uniform(0, 2*np.pi)
         self.build_state()
 
     def build_state(self):
         from skimage.draw import polygon
         self.state = np.zeros((40,40,3))
-        points = [
-            (self.y - self.radius, self.x - self.radius),
-            (self.y - self.radius, self.x + self.radius),
-            (self.y + self.radius, self.x + self.radius),
-            (self.y + self.radius, self.x - self.radius),
-        ]
+        def polar_to_euc(r, theta):
+            return (self.y + r * np.sin(theta), self.x + r * np.cos(theta))
+        points = [polar_to_euc(self.radius, self.rotation + t) for t in [
+            np.pi/4, 3*np.pi/4, 5*np.pi/4, 7*np.pi/4]]
         r, c = zip(*points)
         rr, cc = polygon(r, c)
         self.state[rr, cc] = 1.
