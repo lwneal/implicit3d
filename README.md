@@ -22,5 +22,6 @@ Note the period of the graph- due to rotational symmetry, the same representatio
 
 ## Reconstructions
 
-Top 4: Original images. Bottom 4: Reconstructed images after training.
 ![Reconstructions](https://github.com/lwneal/implicit3d/raw/master/reconstructions.jpg)
+
+Top 4: Original images. Bottom 4: Reconstructed images after training.
