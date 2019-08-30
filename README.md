@@ -1,6 +1,6 @@
 # Augmented Autoencoders
 
-An implementation of the proof-of-concept experiment from
+A PyTorch 0.4+ implementation of the proof-of-concept experiment from
 *Implicit 3D Orientation Learning for 6D Object Detection from RGB Images* by Martin Sundermeyer et al. ECCV 2018.
 
 ## Install and Run
